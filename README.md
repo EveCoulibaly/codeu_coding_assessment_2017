@@ -73,7 +73,7 @@ The following is a key-value pair where the value is an object:
   "name": { "first":"sam", "last":"doe" }
 ~~~~
 
-It should be noted that between the brances, commas, or colons can be any
+It should be noted that between the branches, commas, or colons can be any
 number of whitespace characters.
 
 ## What do I need to do?

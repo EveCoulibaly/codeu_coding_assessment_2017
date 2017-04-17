@@ -18,37 +18,83 @@ import java.util.Collection;
 
 final class MyJSON implements JSON {
 
+    private Map <String, JSON> objects = new HashMap();
+    private Map <String, String> strObjects = new HashMap();
+    
+    
   @Override
+  // GET OBJECT
+  //
+  // Get the value of the nested object with the given name. If there is
+  // no nested object with that name, the method will return null.
+  
+  
   public JSON getObject(String name) {
     // TODO: implement this
-    return null;
+    return objects.get(name);
   }
 
   @Override
+  // SET OBJECT
+  //
+  // Set the value of the nested object with the given name. Any old value
+  // should be overwritten. This method will always return a reference to
+  // "this".
   public JSON setObject(String name, JSON value) {
-    // TODO: implement this
-    return this;
+    // TODO: implement this   
+    objects.put(name, value);
+    
+    return this;  
   }
 
   @Override
+  // GET STRING
+  //
+  // Get the string value within this object that has the given name. if
+  // there is no string with the given name, the method will return null.
   public String getString(String name) {
     // TODO: implement this
-    return null;
+    
+    return strObjects.get(name);
   }
 
   @Override
+  // SET STRING
+  //
+  // Set the string that should be stored under the given name. Any old value
+  // should be overwritten. This method will always return a reference to
+  // "this".
   public JSON setString(String name, String value) {
     // TODO: implement this
+    
+    strObjects.put(name, value);
+    
     return this;
   }
 
   @Override
+  // GET OBJECTS
+  //
+  // Copy the names of all object values to the given collection.
   public void getObjects(Collection<String> names) {
     // TODO: implement this
+    
+    for (String key : objects.keySet()){
+        names.add(key);
+    }  
   }
 
   @Override
+  // GET STRINGS
+  //
+  // Copy the names of all string values to the given collection.
   public void getStrings(Collection<String> names) {
     // TODO: implement this
+    
+    for (String key : strObjects.keySet()){
+        names.add(key);
+    }
+    
   }
+  
 }
